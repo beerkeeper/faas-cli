@@ -30,6 +30,8 @@ WORKDIR /root/
 
 COPY --from=builder /go/src/github.com/openfaas/faas-cli/faas-cli               /usr/bin/
 
+RUN apk add docker
+
 ENV PATH=$PATH:/usr/bin/
 
 CMD ["faas-cli"]
